@@ -75,6 +75,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx_hal.h"
+#include "usb_printf.h"
 
 /** @addtogroup STM32F0xx_HAL_Driver
   * @{
@@ -589,9 +590,11 @@ void HAL_DMA_IRQHandler(DMA_HandleTypeDef *hdma)
 
     if (hdma->XferHalfCpltCallback != NULL)
     {
+      // usb_printf("hdma->XferHalfCpltCallback != NULL");
       /* Half transfer callback */
       hdma->XferHalfCpltCallback(hdma);
     }
+    // else usb_printf("hdma->XferHalfCpltCallback == NULL");
   }
 
   /* Transfer Complete Interrupt management ***********************************/

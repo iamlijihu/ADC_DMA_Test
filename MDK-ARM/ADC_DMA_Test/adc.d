@@ -36,3 +36,4 @@ adc_dma_test\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h
 adc_dma_test\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h
 adc_dma_test\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h
 adc_dma_test\adc.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h
+adc_dma_test\adc.o: ..\usb_printf\usb_printf.h

@@ -95,6 +95,10 @@ int main(void)
   MX_TIM2_Init();
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
+  HAL_Delay(3000);
+  uint32_t dma_buf[2]={0};
+  HAL_TIM_Base_Start(&htim2);
+	HAL_ADC_Start_DMA(&hadc, (uint32_t *)&dma_buf[0], 2);
 
   /* USER CODE END 2 */
 
@@ -102,8 +106,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		usb_printf("while is running...\r\n");
-		HAL_Delay(1000);
+		usb_printf("\r\ndma_buf[0]=%d\r\n",dma_buf[0]&0xffff);
+		usb_printf("dma_buf[1]=%d\r\n",dma_buf[1]&0xffff);
+		HAL_Delay(200);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

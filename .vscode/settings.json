@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "compare": "c",
+        "usb_printf.h": "c"
+    }
+}
